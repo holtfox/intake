@@ -1,0 +1,357 @@
+<br>
+<div class="container">
+<%= form_for(customer) do |f| %>
+  <% if customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group row">
+    <%= f.label :first_name, :class=> 'col-sm-3 col-form-label' %>
+    <div class="col-sm-7">
+    <%= f.text_field :first_name, :class=> 'form-control' %>
+    </div>
+  </div>
+
+      <div class="form-group row">
+        <%= f.label :last_name, :class=> 'col-sm-3 col-form-label' %>
+        <div class="col-sm-7">
+          <%= f.text_field :last_name, :class=> 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= f.label :phone_number, :class=> 'col-sm-3 col-form-label' %>
+        <div class="col-sm-7">
+          <%= f.telephone_field :phone_number, :class=> 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= f.label :email_address, :class=> 'col-sm-3 col-form-label' %>
+        <div class="col-sm-7">
+          <%= f.email_field :email_address, :class=> 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= f.label :birthday, :class=> 'col-sm-3 col-form-label' %>
+        <div class="col-sm-7">
+          <%= f.date_field :birthday, :class=> 'form-control', :type=> 'date' %>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="customer_referal">Were you referred by?</label>
+        <div class="custom-controls-stacked col-sm-7">
+          <label class="custom-control custom-radio">
+          <%= f.radio_button :referal, :id=>"google", :class=>"custom-control-input" %>
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Google</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :referal, :id=>"friend", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Friend</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :referal, :id=>"other", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Other</span>
+          </label>
+
+        </div>
+  </div>
+
+      <div class="form-group row">
+
+        <label class="col-sm-3 col-form-label" for="customer_occupation">Occupation</label>
+        <div class="custom-controls-stacked col-sm-7">
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :occupation, :id=>"sedentary", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Sedentary</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :occupation, :id=>"active", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Active</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :occupation, :id=>"active2", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Active, including travel</span>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="customer_occupation">When was your last massage?</label>
+        <div class="custom-controls-stacked col-sm-7">
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :last, :id=>"sedentary", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description"> 0 - 3 months </span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :last, :id=>"active", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">3 - 6 months</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :last, :id=>"active2", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">6 - 12 months</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :last, :id=>"active2", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">1 - 10 years</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :last, :id=>"active2", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">never</span>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+
+        <label class="col-sm-3 col-form-label" for="customer_occupation">Male / Female</label>
+        <div class="custom-controls-stacked col-sm-7">
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :male, :id=>"0", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Female </span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :male, :id=>"1", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Male </span>
+          </label>
+
+
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="customer_occupation">Weekly exercise frequency</label>
+        <div class="custom-controls-stacked col-sm-7">
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :exercise, :id=>"5 times", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description"> +5 times </span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :exercise, :id=>"3 times", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">3 times</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :exercise, :id=>"1 times", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">1 time </span>
+          </label>
+          <label class="custom-control custom-radio">
+            <%= f.radio_button :exercise, :id=>"0 times", :class=>"custom-control-input" %>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">0 times </span>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="form-group row">
+      <label class="col-sm-8 col-form-label" >If you have any of the following, please click the box and describe further in the adjacent text box.</label>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="customer_referal">Any Allergies?</label>
+        <div class="col-sm-7">
+          <div class="input-group">
+      <span class="input-group-addon">
+        <%= f.check_box :allergies %>
+      </span>
+            <%= f.text_field :allergies_string, :class=> 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="customer_referal">Current Stiffness?</label>
+
+        <div class="col-sm-7">
+          <div class="input-group">
+      <span class="input-group-addon">
+        <%= f.check_box :current_stiffness %>
+      </span>
+            <%= f.text_field :current_stiffness_string, :class=> 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="customer_referal">Spinal issues/surgery?</label>
+        <div class="col-sm-7">
+          <div class="input-group">
+      <span class="input-group-addon">
+        <%= f.check_box :spinal %>
+      </span>
+            <%= f.text_field :spinal_string, :class=> 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="customer_referal">Medical supervision?</label>
+        <div class="col-sm-7">
+          <div class="input-group">
+      <span class="input-group-addon">
+        <%= f.check_box :medical_supervision %>
+      </span>
+            <%= f.text_field :medical_supervision_string, :class=> 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="customer_referal">Blood pressure issues?</label>
+        <div class="col-sm-7">
+          <div class="input-group">
+      <span class="input-group-addon">
+        <%= f.check_box :blood_pressure %>
+      </span>
+            <%= f.text_field :blood_pressure_string, :class=> 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="customer_referal">Artificial limbs?</label>
+        <div class="col-sm-7">
+          <div class="input-group">
+      <span class="input-group-addon">
+        <%= f.check_box :artificial %>
+      </span>
+            <%= f.text_field :artificial_string, :class=> 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+<br>
+        <label class="col-sm-12 col-form-label">Please check all that apply.</label> <br> <br>
+
+  <div class="col-sm-5">
+    <%= f.label :contagious_skin, :class=> 'col-sm-8' %>
+    <%= f.check_box :contagious_skin %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :open_sores, :class=> 'col-sm-8' %>
+    <%= f.check_box :open_sores %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :easy_bruised, :class=> 'col-sm-8' %>
+    <%= f.check_box :easy_bruised %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :current_sprains, :class=> 'col-sm-8' %>
+    <%= f.check_box :current_sprains %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :current_fever, :class=> 'col-sm-8' %>
+    <%= f.check_box :current_fever %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :blood_clots, :class=> 'col-sm-8' %>
+    <%= f.check_box :blood_clots %>
+  </div>
+
+
+
+  <div class="col-sm-5">
+    <label class="col-sm-8 col-form-label" >Joint Swelling</label>
+    <%= f.check_box :itus %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :diabetes, :class=> 'col-sm-8' %>
+    <%= f.check_box :diabetes %>
+  </div>
+
+      <div class="col-sm-5">
+        <%= f.label :pregnant, :class=> 'col-sm-8' %>
+        <%= f.check_box :pregnant %>
+      </div>
+
+  <div class="col-sm-5">
+    <%= f.label :cancer, :class=> 'col-sm-8' %>
+    <%= f.check_box :cancer %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :fibromyalgia, :class=> 'col-sm-8' %>
+    <%= f.check_box :fibromyalgia %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :epilepsy, :class=> 'col-sm-8' %>
+    <%= f.check_box :epilepsy %>
+  </div>
+
+  <div class="col-sm-5">
+    <label class="col-sm-8 col-form-label" >TMJ</label>
+    <%= f.check_box :tmj %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :headaches, :class=> 'col-sm-8' %>
+    <%= f.check_box :headaches %>
+  </div>
+
+  <div class="col-sm-5">
+    <%= f.label :carpal_tunnel, :class=> 'col-sm-8' %>
+    <%= f.check_box :carpal_tunnel %>
+  </div>
+
+  <div class="col-sm-5">
+    <label class="col-sm-8 col-form-label" >Golf/Tennis elbow</label>
+    <%= f.check_box :elbow %>
+  </div>
+      </div>
+<div class="">
+
+  If there is anything else you would like to share, please discuss with your therapist …
+  <br>
+  Otherwise, by clicking the button "Confirm", you are affirming you have disclosed all pertinent medical information, because there are conditions in which massage would be prohibited.  Understand that your massage is in no way a form of diagnoses and the therapists will not act outside their scope of licensure or practice.
+<br>
+  Additionally, this is a professional massage and draping will be used at all times throughout your session.  Your comfort is the most important, so please communicate if you are experiencing any discomfort or pain.
+  <br>
+  Minors (under 17 yrs of age) must have a legal guardian sign another document and be present during the session.
+  <br><br>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Confirm"%>
+  </div>
+<% end %>
+</div>

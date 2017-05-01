@@ -1,0 +1,105 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Phone number</th>
+      <th>Email address</th>
+      <th>Birthday</th>
+      <th>Referal</th>
+      <th>Occupation</th>
+      <th>Daily habit</th>
+      <th>Last</th>
+      <th>Massage</th>
+      <th>Male</th>
+      <th>Pregnant</th>
+      <th>Exercise</th>
+      <th>Allergies</th>
+      <th>Allergies string</th>
+      <th>Current stiffness</th>
+      <th>Current stiffness string</th>
+      <th>Spinal</th>
+      <th>Spinal string</th>
+      <th>Medical supervision</th>
+      <th>Medical supervision string</th>
+      <th>Blood pressure</th>
+      <th>Blood pressure string</th>
+      <th>Artificial</th>
+      <th>Artificial string</th>
+      <th>Contagious skin</th>
+      <th>Open sores</th>
+      <th>Easy bruised</th>
+      <th>Current sprains</th>
+      <th>Current fever</th>
+      <th>Blood clots</th>
+      <th>Itus</th>
+      <th>Diabetes</th>
+      <th>Cancer</th>
+      <th>Fibromyalgia</th>
+      <th>Epilepsy</th>
+      <th>Tmj</th>
+      <th>Headaches</th>
+      <th>Carpal tunnel</th>
+      <th>Elbow</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.first_name %></td>
+        <td><%= customer.last_name %></td>
+        <td><%= customer.phone_number %></td>
+        <td><%= customer.email_address %></td>
+        <td><%= customer.birthday %></td>
+        <td><%= customer.referal %></td>
+        <td><%= customer.occupation %></td>
+        <td><%= customer.daily_habit %></td>
+        <td><%= customer.last %></td>
+        <td><%= customer.massage %></td>
+        <td><%= customer.male %></td>
+        <td><%= customer.pregnant %></td>
+        <td><%= customer.exercise %></td>
+        <td><%= customer.allergies %></td>
+        <td><%= customer.allergies_string %></td>
+        <td><%= customer.current_stiffness %></td>
+        <td><%= customer.current_stiffness_string %></td>
+        <td><%= customer.spinal %></td>
+        <td><%= customer.spinal_string %></td>
+        <td><%= customer.medical_supervision %></td>
+        <td><%= customer.medical_supervision_string %></td>
+        <td><%= customer.blood_pressure %></td>
+        <td><%= customer.blood_pressure_string %></td>
+        <td><%= customer.artificial %></td>
+        <td><%= customer.artificial_string %></td>
+        <td><%= customer.contagious_skin %></td>
+        <td><%= customer.open_sores %></td>
+        <td><%= customer.easy_bruised %></td>
+        <td><%= customer.current_sprains %></td>
+        <td><%= customer.current_fever %></td>
+        <td><%= customer.blood_clots %></td>
+        <td><%= customer.itus %></td>
+        <td><%= customer.diabetes %></td>
+        <td><%= customer.cancer %></td>
+        <td><%= customer.fibromyalgia %></td>
+        <td><%= customer.epilepsy %></td>
+        <td><%= customer.tmj %></td>
+        <td><%= customer.headaches %></td>
+        <td><%= customer.carpal_tunnel %></td>
+        <td><%= customer.elbow %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>
